@@ -8,6 +8,7 @@ import (
 
 func IndexRoute(app *fiber.App) {
 	AuthRoute(app)
+	app.Post("/quiz", controllers.SecondQuiz)
 
 	common := app.Group("/api")
 	common.Use(middleware.AuthMiddleware)
